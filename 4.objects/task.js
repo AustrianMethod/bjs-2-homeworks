@@ -10,7 +10,7 @@ Student.prototype.setSubject = function (subjectName) {
 }
 
 Student.prototype.addMarks = function (...marks) {
-    "marks" in this ? this.marks.splice(this.marks.length, 0, ...marks) : undefined;
+    if ("marks" in this) { this.marks.push( ...marks) };
 }
 
 Student.prototype.getAverage = function () {
